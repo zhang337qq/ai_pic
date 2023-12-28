@@ -1,0 +1,49 @@
+.nutui-react-demo {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@poster-height: 850rpx;
+
+.index-page {
+  .swiper-list {
+    width: 100%;
+    height: @poster-height;
+    .swiper-item {
+      width: 100%;
+      border-radius: 10rpx;
+      height: @poster-height;
+    }
+    .swiper-image {
+      width: 100%;
+      height: @poster-height;
+      flex-shrink: 0;
+      border-radius: 10rpx;
+    }
+  }
+  &.guide {
+    padding: 0;
+    padding-bottom: 20rpx;
+  }
+}
+
+.title {
+  display: block;
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+.btn {
+  display: block;
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.guideUrl {
+  width: 100%;
+  min-height: 100px;
+}

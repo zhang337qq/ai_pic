@@ -1,0 +1,89 @@
+.create-page {
+  display: flex;
+  .action {
+    position: absolute;
+    bottom: 30rpx;
+    font-size: 40rpx;
+    left: 0;
+    right: 0;
+  }
+  .button-group {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .button {
+    font-size: 40rpx;
+    line-height: 2;
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.select-component {
+  .image {
+    height: 340rpx;
+    width: 340rpx;
+    flex-shrink: 0;
+    border-radius: 10rpx;
+    position: relative;
+    margin-right: 15rpx;
+    &.selected {
+      opacity: 0.8;
+    }
+  }
+  .selected-icon {
+    width: 20rpx;
+    height: 20rpx;
+    position: absolute;
+    top: 20rpx;
+    right: 50rpx;
+  }
+}
+
+.button-start {
+  width: 300rpx;
+  background-color: #1296db;
+  color: white;
+  font-weight: bolder;
+}
+
+button[type=primary] {
+  background-color: #1296db;
+}
+
+.result-component {
+  height: 100%;
+  position: relative;
+  display: flex;
+  .swiper-list {
+    width: 100%;
+    height: calc(100vh - 220rpx);
+    opacity: 0.1;
+    filter: blur(10rpx);
+    &.complete {
+      opacity: 1;
+      filter: blur(0);
+    }
+    .swiper-image {
+      width: 100%;
+    height: calc(100vh - 220rpx);
+    }
+  }
+  .progress {
+    margin: auto;
+    z-index: 99;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.failed-tip {
+  text-align: center;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
