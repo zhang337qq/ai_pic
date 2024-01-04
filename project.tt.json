@@ -2,7 +2,7 @@
   "miniprogramRoot": "./",
   "projectname": "ai_pic",
   "description": "ai 生成图片",
-  "appid": "touristappid",
+  "appid": "wx2f4a20dc839f03b6",
   "setting": {
     "urlCheck": true,
     "es6": false,

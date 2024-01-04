@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "ai_pic",
   "description": "ai 生成图片",
-  "appid": "wx04148eb0ae18550e",
+  "appid": "wx2f4a20dc839f03b6",
   "setting": {
     "urlCheck": false,
     "es6": false,
@@ -20,7 +20,7 @@
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
-    "compileHotReLoad": true,
+    "compileHotReLoad": false,
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
@@ -42,5 +42,6 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
+  "libVersion": "3.3.0",
   "condition": {}
 }
