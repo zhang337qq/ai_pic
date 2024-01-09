@@ -7,7 +7,7 @@
     "urlCheck": false,
     "es6": false,
     "enhance": false,
-    "postcss": false,
+    "postcss": true,
     "preloadBackgroundData": false,
     "minified": false,
     "newFeature": false,
@@ -42,6 +42,6 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "3.3.0",
+  "libVersion": "3.2.4",
   "condition": {}
 }

@@ -31,12 +31,25 @@ export interface TaskResult {
   status: number;
 }
 
+export interface delTasks {
+  ids: any;
+  userId: string;
+}
+
 /** 创建任务 */
 export const createTask = defineAPI<{
   task: TaskResult
 }, Task>(
   "post /bizcreate/createTask"
 );
+
+// /bizme/deleteTasks
+export const delImage = defineAPI<{
+  task: delTasks
+}, Task>(
+  "post /bizme/deleteTasks"
+);
+
 
 /** 获取任务进度 */
 export const getTaskInfo = defineAPI<{
@@ -45,10 +58,14 @@ export const getTaskInfo = defineAPI<{
     resultList: any[];
     status: EnumTaskStatus;
   }
-}, {taskId: string}>(
+}, { taskId: string }>(
   'post /bizcreate/getTaskInfo'
 )
 
 export const getTaskList = defineAPI<any, any>(
   "post /bizcreate/getTaskList"
+)
+
+export const getRecords = defineAPI<any, any>(
+  "post /bizme/getRecords"
 )

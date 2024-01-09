@@ -85,7 +85,7 @@ function Index() {
 
   return (
     <View className={classnames('page-container index-page', { guide: !isCloseHomeGuide })}>
-      {isCloseHomeGuide ? (ni
+      {isCloseHomeGuide ? (
         <ScrollView>
           <IndexSwiperList list={posterList} />
           <CommonItemList title="模特" list={modelList} />

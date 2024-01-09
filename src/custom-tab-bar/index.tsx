@@ -4,9 +4,10 @@ import { Find, Home, My } from "@nutui/icons-react-taro";
 import Taro from "@tarojs/taro";
 
 const pagesMap = {
-  0: "/pages/index/index",
-  1: "/pages/create/index",
-  2: "/pages/mine/index",
+  0: "/pages/mine/index",
+  1: "/pages/index/index",
+  2: "/pages/create/index",
+  3: "/pages/user/index",
 };
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
     >
       <Tabbar.Item title="首页" icon={<Home width={20} height={20} />} />
       <Tabbar.Item title="创作" icon={<Find width={20} height={20} />} />
+      {/* <Tabbar.Item title="记录" icon={<My width={20} height={20} />} /> */}
       <Tabbar.Item title="我的" icon={<My width={20} height={20} />} />
     </Tabbar>
   );

@@ -17,6 +17,7 @@ class StorageUtil {
   }
   static getValue(k: StorageKey, defaultValue: StorageData[StorageKey]) {
     const key = this.getKey(k);
+    console.log("setValue..", key);
     return Taro.getStorageSync(key) ?? defaultValue;
   }
 

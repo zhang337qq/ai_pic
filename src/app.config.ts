@@ -3,12 +3,16 @@ export default defineAppConfig({
     'pages/index/index',
     'pages/create/index',
     'pages/mine/index',
+    'pages/user/index',
+    'pages/login/index',
+    'pages/mine/detaile/index',
+    'pages/mine/billDetails/index',
   ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationBarTitleText: '智慧阁AI',
+    navigationBarTextStyle: 'black',
   },
   tabBar: {
     "color": "#afafaf",
@@ -32,8 +36,14 @@ export default defineAppConfig({
         pagePath: 'pages/mine/index',
         iconPath: './assets/icon/icon_mine_0.png',
         selectedIconPath: './assets/icon/icon_mine_1.png'
-      }
+      },
+      // {
+      //   text: '我的',
+      //   pagePath: 'pages/user/index',
+      //   iconPath: './assets/icon/icon_user_0.png',
+      //   selectedIconPath: './assets/icon/icon_user_1.png'
+      // }
     ]
   },
-  navigationBarTitleText: ''
+  navigationBarTitleText: '',
 })

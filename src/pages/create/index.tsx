@@ -108,11 +108,12 @@ function Index() {
 
   const handleCreateTask = async () => {
     setTaskStep("result");
+    setPercent(0);
     const res = await api.task.createTask({
       data: {
         sceneKey: selectedScene,
         modelKey: selectedModel,
-        userId: "1",
+        userId: Taro.getStorageSync('user_id'),
         type: "u_model",
         srcKey: uploadImage.key,
       },
@@ -127,7 +128,10 @@ function Index() {
       },
     });
     poolRequestTimes += 1;
+
     setPercent(res.task?.progress || 0);
+    // console.log(res.task?.status, res.task?.progress)
+
     clearTimeout(pollRequestTaskInfoTimer);
     pollRequestTaskInfoTimer = null;
     if (poolRequestTimes >= 8 || res.task?.status === EnumTaskStatus.ERROR) {
@@ -139,18 +143,24 @@ function Index() {
       res.task?.progress >= 100 ||
       res.task?.status === EnumTaskStatus.COMPLETE
     ) {
-      clearTimeout(pollRequestTaskInfoTimer);
-      pollRequestTaskInfoTimer = null;
-      setTaskStep("complete");
-      setResultList(
-        ((res?.task?.resultList ?? []) as any).map((v) => {
-          return {
-            ...v,
-            url: buildImageUrl(v.url),
-            originUrl: v.url,
-          };
-        })
-      );
+      if (res.task?.status === 2) {
+        setPercent(99);
+        // console.log(222223323232)
+      }
+      setTimeout(() => {
+        clearTimeout(pollRequestTaskInfoTimer);
+        pollRequestTaskInfoTimer = null;
+        setTaskStep("complete");
+        setResultList(
+          ((res?.task?.resultList ?? []) as any).map((v) => {
+            return {
+              ...v,
+              url: buildImageUrl(v.url),
+              originUrl: v.url,
+            };
+          })
+        );
+      }, 1000)
     } else {
       pollRequestTaskInfoTimer = setTimeout(() => {
         pollRequestTaskInfo(taskId);
@@ -160,7 +170,7 @@ function Index() {
 
   const handleSave = () => {
     const url = resultList?.[0]?.url ?? "";
-    Taro.showLoading({title: '保存中...'});
+    Taro.showLoading({ title: '保存中...' });
     Taro.downloadFile({
       url: url,
       success: (res) => {
@@ -268,13 +278,13 @@ function Index() {
         {(taskStep === "complete" ||
           taskStep === "failed" ||
           taskStep === "result") && (
-          <Result
-            percent={percent}
-            isFailed={taskStep === "failed"}
-            isSuccess={taskStep === "complete"}
-            resultList={resultList}
-          />
-        )}
+            <Result
+              percent={percent}
+              isFailed={taskStep === "failed"}
+              isSuccess={taskStep === "complete"}
+              resultList={resultList}
+            />
+          )}
       </View>
       <View className="action">
         {taskStep === "initial" && (
@@ -325,8 +335,8 @@ function Index() {
               </Button>
             </View>
           ) : (
-            <></>
-          ))}
+              <></>
+            ))}
       </View>
     </View>
   );

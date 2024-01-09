@@ -1,21 +1,104 @@
+.my-user{
+  height: 400rpx;
+  margin: 20rpx 0;
+  border-radius: 10rpx;
+  border: 1px solid #ccc;
+  padding: 40rpx 50rpx;
+  .user_message{
+    width: 100%;
+    height: 180rpx;
+    align-content: center;
+    display: flex;
+    align-content: center;
+    .user_image{
+      height: 180rpx;
+      width: 180rpx;
+    }
+    .user_msg{
+      height: 90rpx;
+      margin-left: 40rpx;
+      margin-top: 45rpx;
+      .name{
+        font-weight: 600;
+      }
+      .id{
+        margin-top: 30rpx;
+        font-size: 12px;
+      }
+    }
+  }
+  .user_num{
+    font-size:28rpx;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60rpx;
+    .num{
+      display: inline-block;
+      padding-left: 10rpx;
+      color: #1296db;
+      font-weight: 600;
+    }
+  }
+  .user_buttun{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40rpx;
+    .btn{
+      padding: 0;
+      margin: 0;
+      width: 200rpx;
+      font-size: 28rpx;
+      border: none;
+    }
+    .btn:nth-child(1){
+      margin-right: 20rpx;
+    }
+  }
+}
+.my-creatd{
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  padding: 20rpx 20rpx;
+}
+.task-item:nth-child(2n){
+  background-color: #f3f3f3;
+}
 .task-item {
   display: flex;
   flex-direction: column;
   padding: 20rpx;
-  border: 2rpx solid #d1d1d1;
   border-radius: 20rpx;
   margin-bottom: 20rpx;
+
+
   .task-item-title {
-    font-size: 36rpx;
-    line-height: 36rpx;
+
   }
+
+  .df {
+    display: flex;
+    font-size: 28rpx;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .task-item-detaile {
+    color: #1296db;
+    font-size: 26rpx;
+    margin-right: 20rpx;
+  }
+
   .task-item-images {
     display: flex;
     flex-wrap: wrap;
   }
+
   .task-item-image {
     width: 100rpx;
     height: 100rpx;
+    border: 1px solid #ccc;
+    border-radius: 4rpx;
+    object-fit: cover;
     margin-right: 10rpx;
     margin-top: 10rpx;
   }
